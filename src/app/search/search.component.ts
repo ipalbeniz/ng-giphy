@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
       .subscribe(response => {
         this.imageUrls = response.json().data
           .map(giphyResult => giphyResult.images['fixed_height'].url)
+          .map(url => url.replace('httpss://', 'https://'))
       });
   }
 

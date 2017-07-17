@@ -1,0 +1,14 @@
+<h1>Giphy Search</h1>
+
+<form class="form-inline">
+  <div class="form-group">
+    <input type="text" class="form-control" name="searchText" id="searchText" placeholder="Search text" [(ngModel)]="searchCriteria">
+  </div>
+  <button (click)="onSearchPressed()" type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<masonry [useImagesLoaded]="true" [options]="{ columnWidth: 300, gutter: 5, transitionDuration: '1s' }">
+  <masonry-brick class="brick" *ngFor="let imageUrl of imageUrls">
+    <img class="giphyimage" [src]="imageUrl">
+  </masonry-brick>
+</masonry>
